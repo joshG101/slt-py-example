@@ -11,6 +11,7 @@ import sys
 import yaml
 from shapes.rectangle import Rectangle
 from shapes.circle import Circle
+from shapes.triangle import Triangle
 
 
 def main(argv):
@@ -24,9 +25,12 @@ def main(argv):
     # Read the rectangles from JSON and circles from YAML
     rectangles = get_rectangles("inputs/rectangle.json")
     circles = get_circles("inputs/circle.yml")
+    
+    # Read the triangles from YAML
+    triangles = get_triangles("inputs/triangle.yml")
 
     # Combine both shape types into one list
-    general_shapes = rectangles + circles
+    general_shapes = rectangles + circles + triangles
 
     # Iterate over the shape list using a 'for' loop.
     # Print out the math data for each shape using
@@ -67,6 +71,31 @@ def get_units(argv):
 
     return units
 
+def get_triangles(filename):
+    """
+    Read in from the YAML file supplied and create
+    a list of triangles based on the input data.
+    """
+    try:
+        handle = open(filename, "r")
+        data = yaml.safe_load(handle)
+    except yaml.YAMLError as error:
+        print(error)
+    finally:
+        handle.close()
+
+    # Use a list comprehension to create a new Triangle
+    # object for each side values found in the triangle_list.
+    triangle_objects = []
+    for triangle in data["triangle_list"]:
+        base = triangle["base"]
+        height = triangle["height"]
+        hypotenuse = triangle["hypotenuse"]
+        new_triangle = Triangle(base, height, hypotenuse)
+        triangle_objects.append(new_triangle)
+
+    # Return the list of Circle objects
+    return triangle_objects
 
 def get_circles(filename):
     """

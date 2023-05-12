@@ -9,6 +9,7 @@ shape classes.
 
 from shapes.rectangle import Rectangle
 from shapes.circle import Circle
+from shapes.triangle import Triangle
 
 
 def test_rectangle():
@@ -45,3 +46,35 @@ def test_circle():
     assert radius8.perimeter() == 50.27
     assert radius5.diameter() == 10
     assert radius8.diameter() == 16
+
+def test_triangle():
+    """
+    Defines tests on some specific triangle objects.
+    """
+    
+    triangle1 = Triangle(3, 4, 5)
+    triangle2 = Triangle(5, 5, 5)
+    triangle3 = Triangle(10, 10, 15)
+    
+    
+    # Test areas, perimeters, and whether they are equilateral, isosceles, or scalene
+    
+    assert triangle1.area() == 6
+    assert triangle2.area() == 12.5
+    assert triangle3.area() == 50
+    
+    assert triangle1.perimeter() == 12
+    assert triangle2.perimeter() == 15
+    assert triangle3.perimeter() == 35
+    
+    assert triangle1.is_equilateral() == False
+    assert triangle2.is_equilateral() == True
+    assert triangle3.is_equilateral() == False
+    
+    assert triangle1.is_scalene() == True
+    assert triangle2.is_scalene() == False
+    assert triangle3.is_scalene() == False
+    
+    
+    
+    

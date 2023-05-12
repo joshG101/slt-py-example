@@ -11,6 +11,7 @@ from shapes.rectangle import Rectangle
 class RectangleTest(TestCase):
     """
     Defines a test case for the Rectangle class.
+    
     """
 
     def setUp(self):

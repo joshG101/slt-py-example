@@ -46,6 +46,7 @@ def main(argv):
         "rectangle3": (1, 6),
     }
 
+
     # Iterate over each dictionary item, including the key and the value,
     # and compute the rectangle's area.
     for key, val in rectangle_dict.items():
@@ -57,7 +58,24 @@ def main(argv):
         print(f" {length}x{width} -> area {area} {units} sq")
         print(f" ({length}+{width})x2 -> perim {perim} {units}")
 
-
+    
+    triangle_dict = {
+        "triangle1": (8, 2, 4),
+        "triangle2": (3, 3,3),
+        "triangle3": (6, 6,10),
+    }
+     
+     
+    for key, val in triangle_dict.items():
+        base = val[0]
+        height = val[1]
+        hypotenuse = val[2]
+        area = base * height / 2
+        perim = (base + hypotenuse) * 2
+        print(key)
+        print(f" {length}x{width} -> area {area} {units} sq")
+        print(f" ({length}+{width})x2 -> perim {perim} {units}")
+         
 def get_units(argv):
     """
     Return the unit of measure, either centimeters (cm) or

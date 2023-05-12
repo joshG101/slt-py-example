@@ -1,0 +1,11 @@
+---
+triangle_list:
+- base: 7
+  height: 3
+  hypotenuse: 5
+- base: 5
+  height: 5
+  hypotenuse: 5
+- base: 3
+  height: 3
+  hypotenuse: 5
