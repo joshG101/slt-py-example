@@ -37,6 +37,7 @@ $ tree
 ├── inputs
 │   ├── circle.yml
 │   └── rectangle.json
+|   └── triangle.yml
 ├── requirements.txt
 ├── shape_pytest.py
 ├── shape_unittest.py
@@ -44,12 +45,14 @@ $ tree
 │   ├── __init__.py
 │   ├── circle.py
 │   ├── rectangle.py
+    ├──  triangle.py
 │   └── shape.py
 ├── small
 │   ├── (many files ...)
 └── unittests
     ├── __init__.py
     ├── circle_test.py
+    ├──  triangle_test.py
     └── rectangle_test.py
 ```
 
@@ -96,22 +99,31 @@ centimeters (cm).
 
 ```
 $ python fundamental.py
-Choose unit of measure (cm or in): in
-radius 5 -> area 78.54 in sq
-radius 8 -> area 201.06 in sq
-radius 11 -> area 380.13 in sq
-radius 5 -> perim 31.42 in
-radius 8 -> perim 50.27 in
-radius 11 -> perim 69.12 in
+Choose unit of measure (cm or in): cm
+radius 5 -> area 78.54 cm sq
+radius 8 -> area 201.06 cm sq
+radius 11 -> area 380.13 cm sq
+radius 5 -> perim 31.42 cm
+radius 8 -> perim 50.27 cm
+radius 11 -> perim 69.12 cm
 rectangle1
- 8x2 -> area 16 in sq
- (8+2)x2 -> perim 20 in
+ 8x2 -> area 16 cm sq
+ (8+2)x2 -> perim 20 cm
 rectangle2
- 3x3 -> area 9 in sq
- (3+3)x2 -> perim 12 in
+ 3x3 -> area 9 cm sq
+ (3+3)x2 -> perim 12 cm
 rectangle3
- 1x6 -> area 6 in sq
- (1+6)x2 -> perim 14 in
+ 1x6 -> area 6 cm sq
+ (1+6)x2 -> perim 14 cm
+triangle1
+ 1x6 -> area 8.0 cm sq
+ (1+6)x2 -> perim 24 cm
+triangle2
+ 1x6 -> area 4.5 cm sq
+ (1+6)x2 -> perim 12 cm
+triangle3
+ 1x6 -> area 18.0 cm sq
+ (1+6)x2 -> perim 32 cm
 ```
 
 When one argument is supplied, the script is non-interactive, as `in` or `cm`
@@ -190,6 +202,18 @@ Type:  Circle
 Type:  Circle
  Area:  78.54 cm sq
  Perim: 31.42 cm
+
+Type:  Triangle
+ Area:  10.5 cm sq
+ Perim: 15 cm
+
+Type:  Triangle
+ Area:  12.5 cm sq
+ Perim: 15 cm
+
+Type:  Triangle
+ Area:  4.5 cm sq
+ Perim: 11 cm
 ```
 
 ## Testing
